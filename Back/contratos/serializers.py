@@ -1,12 +1,14 @@
 from rest_framework import serializers
-from models import plantillaContrato, contratoGenerado
+from .models import plantillaContrato, contratoGenerado
 
 class plantillaContratoSerilizer(serializers.ModelSerializer):
-    model=plantillaContrato
+    
     class Meta:
+        model=plantillaContrato
         fields=['id','titulo','descripcion','contenido','categoria','fecha_creacion']
 class contratoGeneradoSerializer(serializers.ModelSerializer):
-    model=contratoGenerado
+    
     class Meta:
+        model=contratoGenerado
         fields=['id','id_usuario','id_plantilla','datos_completos','texto_completo','fecha_creacion','descarga']
          
